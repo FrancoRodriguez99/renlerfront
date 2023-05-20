@@ -65,12 +65,12 @@ export default function LogIn() {
 
           <Google />
 
-          <Link to="/register" id="tengo_cuenta">
+          <Link to="/registrarse" id="tengo_cuenta">
             Registrarme
           </Link>
         </div>
 
-        <div className="copyright">©2023 Lo de walter</div>
+        <div className="copyright">©2023 Renler</div>
       </div>
     </div>
   );

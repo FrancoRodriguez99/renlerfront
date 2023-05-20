@@ -139,12 +139,12 @@ export default function Register() {
 
         <Google />
 
-        <Link to="/login" id="tengo_cuenta">
+        <Link to="/ingresar" id="tengo_cuenta">
           Tengo Cuenta
         </Link>
       </div>
 
-      <div className="copyright">©2023 Lo de walter</div>
+      <div className="copyright">©2023 Renler</div>
     </div>
   );
 }
