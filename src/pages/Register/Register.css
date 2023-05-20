@@ -1,0 +1,178 @@
+#register_big_box {
+  margin-top: 10vh;
+}
+
+#formulario_registro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 2px;
+
+  color: #324558;
+}
+
+#titulo_registro {
+  margin: 1em;
+}
+
+.box_input_registro {
+  position: relative;
+}
+
+.labelinputsregistro {
+  position: absolute;
+  z-index: 2;
+  background: white;
+  padding-left: 1em;
+  padding-right: 1em;
+
+  top: 0%;
+  left: 5%;
+  display: block;
+}
+
+.labelinputsregistro_green {
+  position: absolute;
+  z-index: 2;
+  background: white;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: green;
+
+  top: 0%;
+  left: 5%;
+  display: block;
+}
+
+.labelinputsregistro_red {
+  position: absolute;
+  z-index: 2;
+  color: red;
+  background: white;
+  padding-left: 1em;
+  padding-right: 1em;
+
+  top: 0%;
+  left: 5%;
+  display: block;
+}
+
+.inputregister {
+  box-sizing: border-box;
+  margin: 1em;
+
+  width: 292px;
+  height: 39px;
+  border: 2px solid #324558;
+  border-radius: 10px;
+}
+
+.inputregister_red {
+  box-sizing: border-box;
+  margin: 1em;
+  outline: none;
+  width: 292px;
+  height: 39px;
+  border: 2px solid red;
+  border-radius: 10px;
+}
+
+.inputregister_green {
+  box-sizing: border-box;
+  margin: 1em;
+  outline: none;
+  width: 292px;
+  height: 39px;
+  border: 2px solid green;
+  border-radius: 10px;
+}
+
+#register_crear_cuenta {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 60px;
+  gap: 10px;
+
+  width: 263px;
+  height: 44px;
+
+  background: #f7bb06;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 2px;
+
+  color: #324558;
+}
+
+#tengo_cuenta {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 2px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 60px;
+  gap: 10px;
+
+  width: 273px;
+  height: 44px;
+
+  border: 2px solid #324558;
+  border-radius: 20px;
+  text-decoration: none;
+  width: 135px;
+  height: 24px;
+
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+#register_botones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.copyright {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  letter-spacing: 2px;
+
+  color: #000000;
+
+  text-align: center;
+}

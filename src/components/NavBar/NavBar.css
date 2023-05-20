@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Poppins:wght@500&display=swap");
+
+#test {
+  display: flex;
+  justify-content: center;
+}
+
+#navbar_box {
+  display: grid;
+  grid-template-columns: 1fr 3fr 6fr 1fr;
+  grid-template-rows: 1fr;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-family: "Poppins", sans-serif;
+  width: 95%;
+  height: 70px;
+  background-color: #990033;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 99456546514112106352156898999;
+  margin: 1em;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+#navbar_vos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#img_vos_nav {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+#links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.link_decoration {
+  text-decoration: none;
+  color: #f9f9f9;
+  line-height: 0%;
+  margin: 0;
+  padding: 0;
+}
+
+#campana_img {
+  width: 25px;
+  height: 25px;
+}
