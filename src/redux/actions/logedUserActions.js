@@ -1,7 +1,7 @@
 import { logIn } from "../slices/userLogedSlice";
 
 export const loginAction = (data) => async (dispatch) => {
-  return fetch(`http://192.168.1.124:9000/api/users/signIn`, {
+  return fetch(`https://back-renler.onrender.com/api/users/signIn`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -19,7 +19,7 @@ export const loginAction = (data) => async (dispatch) => {
 };
 
 export const loginGoogle = (data) => async (dispatch) => {
-  return fetch(`http://192.168.1.124:9000/api/users/googleLogIn`, {
+  return fetch(`https://back-renler.onrender.com/api/users/googleLogIn`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
