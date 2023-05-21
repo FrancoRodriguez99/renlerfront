@@ -1,0 +1,10 @@
+#habitaciones_box {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  margin-top: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  overflow-y: auto;
+}

@@ -18,7 +18,7 @@ const MapaCastillo = () => {
   const User = useSelector((state) => state.userLoged._id);
 
   useEffect(() => {
-    fetch("https://back-renler.onrender.com/api/build/getMap", { method: "GET" })
+    fetch("http://192.168.1.124:9000/api/build/getMap", { method: "GET" })
       .then((x) => x.json())
       .then((d) => setData(d));
   }, []);
@@ -30,7 +30,7 @@ const MapaCastillo = () => {
   function handleCrear() {
     setCreando(!creando);
     if (creando)
-      fetch("https://back-renler.onrender.com/api/build/claim", {
+      fetch("http://192.168.1.124:9000/api/build/claim", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

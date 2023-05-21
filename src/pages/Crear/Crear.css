@@ -1,0 +1,15 @@
+#mas_abajo {
+  margin-top: 15vh;
+  background-color: black;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#imagen_prueba {
+  width: 50px;
+  height: 50px;
+}
