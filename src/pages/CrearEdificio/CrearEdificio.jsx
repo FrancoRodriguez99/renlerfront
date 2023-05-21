@@ -16,7 +16,7 @@ export default function CrearEdificio() {
   const [rewardQuantity, setRewardQuantity] = useState("");
 
   useEffect((x) => {
-    fetch(`http://192.168.1.124:9000/api/admin/all`, {
+    fetch(`https://back-renler.onrender.com/api/admin/all`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -54,7 +54,7 @@ export default function CrearEdificio() {
   }
 
   function crear() {
-    fetch(`http://192.168.1.124:9000/api/admin/generateEdificio`, {
+    fetch(`https://back-renler.onrender.com/api/admin/generateEdificio`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
