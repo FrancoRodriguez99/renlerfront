@@ -26,7 +26,7 @@ export default function NavBar() {
               Mapas
             </Link>
           </div>
-          <img></img>
+          <img alt="cargando?"></img>
           <div id="navbar_vos">
             <img src={campana} id="campana_img" alt="campana"></img>
             <div className="link_decoration">{userLoged.email}</div>
@@ -55,7 +55,7 @@ export default function NavBar() {
               Mapas
             </Link>
           </div>
-          <img></img>
+          <img alt="cargando?"></img>
           <div id="navbar_vos">
             <Link to="/ingresar" className="link_decoration">
               Login

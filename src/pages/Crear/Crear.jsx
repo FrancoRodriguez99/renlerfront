@@ -15,12 +15,19 @@ export default function Crear() {
   const [rewards, setRewards] = useState("");
   const [rewardQuantity, setRewardQuantity] = useState("");
 
+  const [habitaciones, setHabitaciones] = useState([]);
+  const [mejorable, setMejorable] = useState(false);
+  const [paraMejorarRequiero, setParaMejorarRequiero] = useState(null);
+
   useEffect((x) => {
     fetch(`https://back-renler.onrender.com/api/admin/all`, {
       method: "GET",
     })
       .then((response) => response.json())
-      .then((d) => setRecursos(d.recursos))
+      .then((d) => {
+        setRecursos(d.recursos);
+        setHabitaciones(d.habitaciones);
+      })
       .catch((e) => console.log(e));
   }, []);
 
@@ -57,6 +64,8 @@ export default function Crear() {
         datos: { icono: datos.avatar[0], ...create },
         ganancias: selectedReward,
         recetas: selectedIngredients,
+        mejorable,
+        paraMejorarRequiero,
       }),
     })
       .then((response) => response.json())
@@ -66,6 +75,8 @@ export default function Crear() {
           setCreate({ loading: false, time: "", descripcion: "", nombre: "", size: "", quantity: "", bonificacionNumero: "", bonificadores: "" });
           setSelectedIngredients([]);
           setDatos({ loading: false, avatar: [] });
+          setParaMejorarRequiero(null);
+          setMejorable(false);
         }
       })
       .catch((e) => console.log(e));
@@ -139,7 +150,6 @@ export default function Crear() {
       </div>
       <input placeholder="tiempo" onChange={(e) => handleTime(e)} value={create.time}></input>
       <input placeholder="tamaño" onChange={(e) => handleSize(e)} value={create.size}></input>
-
       <div>
         <div>
           <label>Receta:</label>
@@ -170,7 +180,6 @@ export default function Crear() {
           ))}
         </ul>
       </div>
-
       <div>
         <div>
           <label>Reward:</label>
@@ -183,6 +192,7 @@ export default function Crear() {
             ))}
           </select>
         </div>
+
         <div>
           <label>Quantity:</label>
           <input type="text" value={rewardQuantity} onChange={handleRewardQuantity} />
@@ -201,7 +211,20 @@ export default function Crear() {
           ))}
         </ul>
       </div>
-
+      <div>
+        <label>Es una mejora de otra habitacion?:</label>
+        <select onChange={(e) => setParaMejorarRequiero(e.target.value === "No es una mejora de nada" ? null : e.target.value)}>
+          <option value={null}>No es una mejora de nada</option>
+          {habitaciones.map((x) => (
+            <option key={x._id} value={x._id}>
+              {x.nombre}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
+        Se puede mejorar?<button onClick={() => setMejorable(!mejorable)}>{mejorable ? "Se puede Mejorar" : "No se puede mejorar"}</button>
+      </div>
       <button onClick={() => crear()}>Crear</button>
     </div>
   );

@@ -60,7 +60,7 @@ export default function CrearEdificio() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        datos: { icono: datos.avatar[0], ...create, size: calcularSize() },
+        datos: { icono: datos.avatar, ...create, size: calcularSize() },
         ganancias: selectedReward,
         recetas: selectedIngredients,
       }),
@@ -136,8 +136,17 @@ export default function CrearEdificio() {
   return (
     <div id="mas_abajo">
       <input placeholder="Nombre" onChange={(e) => handleTitle(e)} value={create.nombre}></input>
-      {datos.loading ? "Subiendo Imagen..." : <img id="imagen_prueba" src={datos.avatar} alt="la foto que subiste" />}
-      <input type="file" accept="image/png, image/jpeg, image/svg+xml" onChange={(e) => handleImage(e)} />
+      {datos.loading ? (
+        "Subiendo Imagen..."
+      ) : (
+        <div>
+          icono:
+          <img id="imagen_prueba" src={datos.avatar[0]} alt="la foto que subiste" />
+          wallpaper:
+          <img id="imagen_prueba" src={datos.avatar[1]} alt="la foto que subiste" />
+        </div>
+      )}
+      <input type="file" accept="image/png, image/jpeg, image/svg+xml" multiple="true" onChange={(e) => handleImage(e)} />
       <input placeholder="descripcion" onChange={(e) => handleDescripcion(e)} value={create.descripcion}></input>
       <div>
         <input placeholder="bonificadores texto" onChange={(e) => handleBonificadores(e)} value={create.bonificadores}></input>

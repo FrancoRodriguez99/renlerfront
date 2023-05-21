@@ -14,10 +14,12 @@ import Crear from "./pages/Crear/Crear";
 import Habitaciones from "./pages/Habitaciones/Habitaciones";
 import CrearEdificio from "./pages/CrearEdificio/CrearEdificio";
 import Edificios from "./pages/Edificios/Edificios";
+import LoadingOverlay from "react-loading-overlay";
 
 function App() {
   const userLoged = useSelector((state) => state.userLoged);
   const dispatch = useDispatch();
+  const load = useSelector((state) => state.loading);
 
   useEffect(() => {
     if (!userLoged.loged) {
@@ -30,7 +32,7 @@ function App() {
 
   if (userLoged.loged)
     return (
-      <>
+      <LoadingOverlay active={load.loading || load.loadingmenu} spinner text="Cargando el contenido, espere un momento...">
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -44,11 +46,11 @@ function App() {
           <Route path="/edificios" element={<Edificios />}></Route>
           <Route path="/crearEdificio" element={<CrearEdificio />}></Route>
         </Routes>
-      </>
+      </LoadingOverlay>
     );
   else
     return (
-      <>
+      <LoadingOverlay active={load} spinner text="Cargando el contenido, espere un momento...">
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -60,7 +62,7 @@ function App() {
           <Route path="/edificios" element={<Edificios />}></Route>
           <Route path="/crearEdificio" element={<CrearEdificio />}></Route>
         </Routes>
-      </>
+      </LoadingOverlay>
     );
 }
 

@@ -14,7 +14,8 @@ export default function Habitacion({ x }) {
     <div className="habitacion_box">
       <div>
         {x.nombre}
-        <img alt="logo" src={x.icono} className="habitacion_icono"></img>
+        <img alt="logo" src={x.icono[0]} className="habitacion_icono"></img>
+        <img alt="logo" src={x.icono[1]} className="habitacion_icono"></img>
       </div>
       <div>{x.descripcion}</div>
       <div>{x.size.split(",")[0] + "-" + x.size.split(",")[1] + "sq"}</div>
@@ -32,6 +33,7 @@ export default function Habitacion({ x }) {
               {x.id.nombre} = {x.quantity}
             </div>
           ))}
+          {x.recetaMejora ? <div>{x.recetaMejora.nombre}</div> : null}
         </div>
       </div>
       <div>
@@ -44,6 +46,7 @@ export default function Habitacion({ x }) {
           ))}
         </div>
       </div>
+      {x.upgradeable ? "Esto se puede mejorar" : "No se puede mejorar"}
       <button onClick={() => handleDelete()}>!Borrar! Cuidado conmigo que no le puse un boton de confirmar (da paja)</button>
     </div>
   );
