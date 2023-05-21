@@ -30,6 +30,8 @@ function App() {
     }
   }, [userLoged, dispatch]);
 
+  console.log(load);
+
   if (userLoged.loged)
     return (
       <LoadingOverlay active={load.loading || load.loadingmenu} spinner text="Cargando el contenido, espere un momento...">
@@ -50,7 +52,7 @@ function App() {
     );
   else
     return (
-      <LoadingOverlay active={load} spinner text="Cargando el contenido, espere un momento...">
+      <LoadingOverlay active={load.loading || load.loadingmenu} spinner text="Cargando el contenido, espere un momento...">
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
