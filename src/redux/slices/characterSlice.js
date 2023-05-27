@@ -11,7 +11,8 @@ const character = createSlice({
   reducers: {
     insertData: (state, { payload }) => {
       state.characters = payload;
-      state.characterSelected = payload[0];
+      if (payload[0] === null) state.characterSelected = payload[0];
+      else state.characterSelected = { recursos: [] };
     },
     selectCharacter: (state, { payload }) => {
       state.characterSelected = payload;
