@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { cloudinary } from "../../tools/cloudinary";
+import { cloudinary } from "../../utils/cloudinary";
 
 export default function CrearEdificio() {
   const [datos, setDatos] = useState({ loading: false, avatar: [] });
@@ -16,7 +16,7 @@ export default function CrearEdificio() {
   const [rewardQuantity, setRewardQuantity] = useState("");
 
   useEffect((x) => {
-    fetch(`https://back-renler.onrender.com/api/admin/all`, {
+    fetch(`http://192.168.1.124:9000/api/admin/all`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -54,7 +54,7 @@ export default function CrearEdificio() {
   }
 
   function crear() {
-    fetch(`https://back-renler.onrender.com/api/admin/generateEdificio`, {
+    fetch(`http://192.168.1.124:9000/api/admin/generateEdificio`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -12,11 +12,11 @@ const menuAcciones = createSlice({
     downtime: (state) => {
       state.menu = "downtime";
     },
-    mapa: (state, { payload }) => {
-      state.mapa = payload;
+    fabricacion: (state, { payload }) => {
+      state.menu = "fabricacion";
     },
   },
 });
 
-export const { downtime, mapa } = menuAcciones.actions;
+export const { downtime, fabricacion } = menuAcciones.actions;
 export default menuAcciones.reducer;

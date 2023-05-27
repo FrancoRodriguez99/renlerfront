@@ -1,18 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Poppins:wght@500&display=swap");
 
-.gridline {
-  stroke: #474747; /* Line color */
-  stroke-width: 1; /* Line width */
-  fill: transparent;
-}
-.gridline_blue {
-  stroke: rgb(1, 36, 133) !important;
-}
-
-.gridline_pink {
-  stroke: rgb(238, 4, 175) !important;
-}
-
 #sticky_id {
   display: flex;
   flex-direction: column;
@@ -29,13 +16,22 @@
 }
 
 #options_mapa {
-  margin-top: 10vh;
-  margin-left: 2.5vw;
-  left: 0;
-  width: 20vw;
+  width: 400px;
   position: absolute;
   z-index: 500;
   background-color: #fff1e6;
+  height: 80vh;
+}
+
+#genova_suggestion {
+  margin-left: 0.5vw;
+  margin-top: 6vh;
+  left: 0;
+  top: 0;
+  width: 400px;
+  position: absolute;
+  z-index: 500;
+
   height: 80vh;
 }
 

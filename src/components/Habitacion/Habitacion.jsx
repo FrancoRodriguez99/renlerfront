@@ -2,7 +2,7 @@ import "./Habitacion.css";
 
 export default function Habitacion({ x }) {
   function handleDelete() {
-    fetch(`https://back-renler.onrender.com/api/admin/deleteHabitacion/` + x._id, {
+    fetch(`http://192.168.1.124:9000/api/admin/deleteHabitacion/` + x._id, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -14,7 +14,7 @@ export default function Habitacion({ x }) {
     <div className="habitacion_box">
       <div>
         {x.nombre}
-        <img alt="logo" src={x.icono[0]} className="habitacion_icono"></img>
+        <img alt="logo" src={typeof x.icono === "object" ? x.icono[0] : x.icono} className="habitacion_icono"></img>
         <img alt="logo" src={x.icono[1]} className="habitacion_icono"></img>
       </div>
       <div>{x.descripcion}</div>

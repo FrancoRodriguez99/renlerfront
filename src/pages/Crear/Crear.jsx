@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { cloudinary } from "../../tools/cloudinary";
+import { cloudinary } from "../../utils/cloudinary";
 import "./Crear.css";
 
 export default function Crear() {
@@ -20,7 +20,7 @@ export default function Crear() {
   const [paraMejorarRequiero, setParaMejorarRequiero] = useState(null);
 
   useEffect((x) => {
-    fetch(`https://back-renler.onrender.com/api/admin/all`, {
+    fetch(`http://192.168.1.124:9000/api/admin/all`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -55,7 +55,7 @@ export default function Crear() {
   }
 
   function crear() {
-    fetch(`https://back-renler.onrender.com/api/admin/generateHabitacion`, {
+    fetch(`http://192.168.1.124:9000/api/admin/generateHabitacion`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

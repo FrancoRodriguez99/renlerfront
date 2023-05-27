@@ -1,0 +1,37 @@
+#pestanias_downtime {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.selected_flap {
+  background-color: #fff1e6;
+  width: 133.3px;
+  text-align: center;
+  font-family: "Alegreya SC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  height: 31px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unselected_flap {
+  background-color: #fff1e683;
+  width: 133.3px;
+  text-align: center;
+  font-family: "Alegreya SC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  height: 31px;
+  color: #ededed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

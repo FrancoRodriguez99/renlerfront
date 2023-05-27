@@ -1,0 +1,21 @@
+#capital_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #fff1e6;
+}
+
+#capital_title {
+  align-self: flex-start;
+  margin-left: 1em;
+  font-family: "Alegreya SC";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  /* identical to box height */
+
+  color: #5d0000;
+}

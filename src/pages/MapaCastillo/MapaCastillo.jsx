@@ -9,25 +9,29 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loading, notLoading } from "../../redux/slices/loadingSlice";
 import MenuAcciones from "../../components/MenuAcciones/MenuAcciones";
+import FlapsOptionsMaps from "../../components/FlapsOptionsMap/FlapsOptionsMap";
 
 const MapaCastillo = () => {
-  const [conjuntoCreado, setConjuntoCreado] = useState([]);
   const [data, setData] = useState([]);
   const dispatch = useDispatch();
+  const reload = useSelector((state) => state.claim.reload);
 
   useEffect(() => {
     dispatch(loading());
-    fetch("https://back-renler.onrender.com/api/build/getMap", { method: "GET" })
+    fetch("http://192.168.1.124:9000/api/build/getMap", { method: "GET" })
       .then((x) => x.json())
       .then((d) => {
         setData(d);
         dispatch(notLoading());
       });
-  }, [dispatch]);
+  }, [dispatch, reload]);
 
   return (
     <div id="mapa_castillo_box_general">
-      <MenuAcciones />
+      <div id="genova_suggestion">
+        <FlapsOptionsMaps />
+        <MenuAcciones />
+      </div>
       <div id="mapa_leaflet">
         <MapContainer crs={CRS.Simple} zoomControl={false} center={[300, 300]} zoom={2} style={{ width: "100%", height: "100%" }} minZoom={-1} maxZoom={5}>
           <ImageOverlay
@@ -37,6 +41,17 @@ const MapaCastillo = () => {
               [600, 600],
             ]}
           />
+
+          {data.map((x, i) => (
+            <GridOverlay
+              x={x}
+              key={x._id}
+              derecha={x.coordenadas[0][1] !== 590 ? data[i + 1]._id : "false"}
+              izquierda={x.coordenadas[0][1] !== 0 ? data[i - 1]._id : "false"}
+              abajo={x.coordenadas[0][0] !== 0 ? data[i - 60]._id : "false"}
+              arriba={x.coordenadas[0][0] !== 590 ? data[i + 60]._id : "false"}
+            />
+          ))}
         </MapContainer>
       </div>
     </div>
@@ -44,9 +59,3 @@ const MapaCastillo = () => {
 };
 
 export default MapaCastillo;
-
-/*
-{data.map((x) => (
-            <GridOverlay x={x} key={x._id} creando={false} conjuntoCreado={conjuntoCreado} setConjuntoCreado={setConjuntoCreado} />
-          ))}
-          */

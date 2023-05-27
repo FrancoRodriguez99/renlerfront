@@ -21,8 +21,14 @@ const loadScreen = createSlice({
     notLoadingMenu: (state) => {
       state.loadingmenu = false;
     },
+    loadingClickedOnSomething: (state) => {
+      state.loading = true;
+    },
+    notloadingClickedOnSomething: (state) => {
+      state.loading = false;
+    },
   },
 });
 
-export const { loading, notLoading, notLoadingMenu, loadingMenu } = loadScreen.actions;
+export const { loading, notLoading, notLoadingMenu, loadingMenu, loadingClickedOnSomething, notloadingClickedOnSomething } = loadScreen.actions;
 export default loadScreen.reducer;

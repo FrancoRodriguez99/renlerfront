@@ -15,6 +15,8 @@ import Habitaciones from "./pages/Habitaciones/Habitaciones";
 import CrearEdificio from "./pages/CrearEdificio/CrearEdificio";
 import Edificios from "./pages/Edificios/Edificios";
 import LoadingOverlay from "react-loading-overlay";
+import { randomPhrase } from "./utils/randomPhrase";
+import { getCharacters } from "./redux/actions/characterActions";
 
 function App() {
   const userLoged = useSelector((state) => state.userLoged);
@@ -26,15 +28,14 @@ function App() {
       const userLocal = JSON.parse(window.localStorage.getItem("user"));
       if (userLocal !== null) {
         dispatch(logIn(userLocal));
+        dispatch(getCharacters(userLocal._id));
       }
     }
   }, [userLoged, dispatch]);
 
-  console.log(load);
-
   if (userLoged.loged)
     return (
-      <LoadingOverlay active={load.loading || load.loadingmenu} spinner text="Cargando el contenido, espere un momento...">
+      <LoadingOverlay active={load.loading || load.loadingmenu} spinner text={randomPhrase()}>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -55,14 +56,9 @@ function App() {
       <LoadingOverlay active={load.loading || load.loadingmenu} spinner text="Cargando el contenido, espere un momento...">
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
           <Route path="/ingresar" element={<Login />}></Route>
           <Route path="/registrarse" element={<Register />}></Route>
-          <Route path="/mapaCastillo" element={<MapaCastillo />}></Route>
-          <Route path="/crear" element={<Crear />}></Route>
-          <Route path="/habitaciones" element={<Habitaciones />}></Route>
-          <Route path="/edificios" element={<Edificios />}></Route>
-          <Route path="/crearEdificio" element={<CrearEdificio />}></Route>
+          <Route path="*" element={<Login />}></Route>
         </Routes>
       </LoadingOverlay>
     );

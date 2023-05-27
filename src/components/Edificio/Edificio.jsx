@@ -1,6 +1,6 @@
 export default function Habitacion({ x }) {
   function handleDelete() {
-    fetch(`https://back-renler.onrender.com/api/admin/deleteEdificio/` + x._id, {
+    fetch(`http://192.168.1.124:9000/api/admin/deleteEdificio/` + x._id, {
       method: "DELETE",
     })
       .then((response) => response.json())

@@ -1,0 +1,42 @@
+.sin_arriba {
+  fill: red; /* Fill color of the polygon */
+  stroke: black; /* Stroke color for the border */
+  stroke-width: 2px; /* Stroke width for the border */
+  stroke-opacity: 1; /* Stroke opacity */
+  stroke-dasharray: none; /* Disable dashed stroke if present */
+  stroke-linecap: butt; /* Set the stroke line cap style */
+  stroke-linejoin: miter; /* Set the stroke line join style */
+}
+rect {
+  fill: none;
+  stroke: black;
+}
+.top {
+  stroke-dasharray: 0, 50, 150;
+}
+.left {
+  stroke-dasharray: 150, 50;
+}
+.bottom {
+  stroke-dasharray: 100, 50;
+}
+.right {
+  stroke-dasharray: 50, 50, 100;
+}
+
+.gridline {
+  stroke: #474747; /* Line color */
+  stroke-width: 1; /* Line width */
+  fill: transparent;
+  z-index: 5;
+}
+.gridline_blue {
+  fill: rgb(8, 1, 151);
+  stroke-dasharray: 0.05;
+  z-index: -551;
+  stroke-width: 0.7;
+}
+
+.gridline_pink {
+  stroke: rgb(249, 4, 159) !important;
+}

@@ -1,0 +1,23 @@
+#botones_de_habitacion {
+  display: flex;
+  padding-bottom: 2em;
+}
+
+.button_habitacion_estilos_principal {
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#imagen_falta_tiempo {
+  height: 65px;
+  width: 65px;
+}
+
+#countdown {
+  position: absolute;
+  top: 110%;
+  width: 200px;
+}

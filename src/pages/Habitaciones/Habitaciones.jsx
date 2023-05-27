@@ -6,13 +6,15 @@ export default function Habitaciones() {
   const [habitaciones, setHabitaciones] = useState([]);
 
   useEffect(() => {
-    fetch(`https://back-renler.onrender.com/api/admin/all`, {
+    fetch(`http://192.168.1.124:9000/api/admin/all`, {
       method: "GET",
     })
       .then((response) => response.json())
       .then((d) => setHabitaciones(d.habitaciones))
       .catch((e) => console.log(e));
   }, []);
+
+  console.log(habitaciones);
 
   return (
     <div id="habitaciones_box">

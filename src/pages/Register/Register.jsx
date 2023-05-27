@@ -87,7 +87,7 @@ export default function Register() {
   }
 
   function createAccount() {
-    fetch(`https://back-renler.onrender.com/api/users/singUp`, {
+    fetch(`http://192.168.1.124:9000/api/users/singUp`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -98,10 +98,11 @@ export default function Register() {
     })
       .then((response) => response.json())
       .then((d) => {
+        console.log(d);
         if (d.message === "User created successfully") {
           dispatch(loginAction({ email: state.email.value, password: state.password.value }));
         } else {
-          setState({ ...state, email: { value: "email_no_valido", ok: false } });
+          if (d.message === "email") setState({ ...state, email: { value: "email_no_valido", ok: false } });
           createNotification("emailexiste");
         }
       })

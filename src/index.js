@@ -14,13 +14,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <GoogleOAuthProvider clientId="1002078848858-270kialc8tl7rptofdjv46u2rr52acdi.apps.googleusercontent.com">
-      <React.StrictMode>
-        <BrowserRouter>
-          <App />
-
-          <NotificationContainer />
-        </BrowserRouter>
-      </React.StrictMode>
+      <BrowserRouter>
+        <App />
+        <NotificationContainer />
+      </BrowserRouter>
     </GoogleOAuthProvider>
   </Provider>
 );

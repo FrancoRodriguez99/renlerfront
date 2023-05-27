@@ -7,8 +7,6 @@ const initialState = {
   avatar: "",
   token: "",
   _id: "",
-  selectedAddres: "",
-  direccion: "",
 };
 
 const userLoged = createSlice({
