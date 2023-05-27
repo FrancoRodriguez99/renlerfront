@@ -12,7 +12,7 @@ const character = createSlice({
     insertData: (state, { payload }) => {
       state.characters = payload;
       if (payload[0] === null) state.characterSelected = payload[0];
-      else state.characterSelected = { recursos: [] };
+      else state.characterSelected = { recursos: [], craftingRecursos: [] };
     },
     selectCharacter: (state, { payload }) => {
       state.characterSelected = payload;
