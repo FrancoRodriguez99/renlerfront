@@ -2,7 +2,7 @@ import "./Habitacion.css";
 
 export default function Habitacion({ x }) {
   function handleDelete() {
-    fetch(`http://192.168.1.124:9000/api/admin/deleteHabitacion/` + x._id, {
+    fetch(`https://back-renler.onrender.com/api/admin/deleteHabitacion/` + x._id, {
       method: "DELETE",
     })
       .then((response) => response.json())

@@ -20,7 +20,7 @@ export default function Crear() {
   const [paraMejorarRequiero, setParaMejorarRequiero] = useState(null);
 
   useEffect((x) => {
-    fetch(`http://192.168.1.124:9000/api/admin/all`, {
+    fetch(`https://back-renler.onrender.com/api/admin/all`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -55,7 +55,7 @@ export default function Crear() {
   }
 
   function crear() {
-    fetch(`http://192.168.1.124:9000/api/admin/generateHabitacion`, {
+    fetch(`https://back-renler.onrender.com/api/admin/generateHabitacion`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

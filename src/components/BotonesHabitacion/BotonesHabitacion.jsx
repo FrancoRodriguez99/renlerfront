@@ -16,6 +16,8 @@ import upgradeableENabled from "../../assets/upgradeableEnabled.png";
 import { useState } from "react";
 import { formatTime } from "../../utils/timeUtils";
 import { useEffect } from "react";
+import flechaderechaHover from "../../assets/derechaHover.png";
+import flechaizquierdaHover from "../../assets/izquierdaHover.png";
 
 export default function BotonesHabitacion({ indiceEdificio, setIndiceEdificio, length, databasedAlready, habitacion, hayQueUpgradear, triggerReload }) {
   const building = useSelector((state) => state.claim);
@@ -23,10 +25,12 @@ export default function BotonesHabitacion({ indiceEdificio, setIndiceEdificio, l
   const resourcesYouhave = useSelector((state) => state.character.characterSelected.recursos);
   const userId = useSelector((state) => state.userLoged._id);
   const [remainingTime, setRemainingTime] = useState("");
+  const [derechaHover, setDerechaHover] = useState(false);
+  const [izquierdaHover, setIzquierdaHover] = useState(false);
 
   function startBuilding() {
     dispatch(loadingClickedOnSomething());
-    fetch("http://192.168.1.124:9000/api/build/startBuildingCrafting", {
+    fetch("https://back-renler.onrender.com/api/build/startBuildingCrafting", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -142,8 +146,10 @@ export default function BotonesHabitacion({ indiceEdificio, setIndiceEdificio, l
     <div id="botones_de_habitacion">
       <img
         alt="izquierda"
-        src={flechaizquierda}
+        src={izquierdaHover ? flechaizquierdaHover : flechaizquierda}
         className="button_habitacion_estilos"
+        onMouseEnter={() => setIzquierdaHover(true)}
+        onMouseLeave={() => setIzquierdaHover(false)}
         onClick={() => {
           if (indiceEdificio !== 0) setIndiceEdificio(indiceEdificio - 1);
           else setIndiceEdificio(length - 1);
@@ -153,7 +159,9 @@ export default function BotonesHabitacion({ indiceEdificio, setIndiceEdificio, l
 
       <img
         alt="derecha"
-        src={flechaderecha}
+        src={derechaHover ? flechaderechaHover : flechaderecha}
+        onMouseEnter={() => setDerechaHover(true)}
+        onMouseLeave={() => setDerechaHover(false)}
         className="button_habitacion_estilos"
         onClick={() => {
           if (indiceEdificio !== length - 1) setIndiceEdificio(indiceEdificio + 1);

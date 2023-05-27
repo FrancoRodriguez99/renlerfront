@@ -38,7 +38,7 @@ export default function DownTime() {
 
   function handleCrear() {
     dispatch(loadingMenu());
-    fetch("http://192.168.1.124:9000/api/build/claim", {
+    fetch("https://back-renler.onrender.com/api/build/claim", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -61,7 +61,7 @@ export default function DownTime() {
 
   useEffect(() => {
     dispatch(loadingMenu());
-    fetch(`http://192.168.1.124:9000/api/admin/all`, {
+    fetch(`https://back-renler.onrender.com/api/admin/all`, {
       method: "GET",
     })
       .then((response) => response.json())

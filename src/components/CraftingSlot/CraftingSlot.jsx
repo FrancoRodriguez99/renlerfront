@@ -29,7 +29,7 @@ export default function CraftingSlot({ crafting }) {
   }, [idResource, resources, crafting.recurso]);
 
   useEffect(() => {
-    fetch("http://192.168.1.124:9000/api/build/getResources", { method: "GET" })
+    fetch("https://back-renler.onrender.com/api/build/getResources", { method: "GET" })
       .then((x) => x.json())
       .then((d) => {
         setResources(d);
@@ -46,7 +46,7 @@ export default function CraftingSlot({ crafting }) {
 
   function startCrafting() {
     dispatch(loadingClickedOnSomething());
-    fetch("http://192.168.1.124:9000/api/build/startResourceCrafting", {
+    fetch("https://back-renler.onrender.com/api/build/startResourceCrafting", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -88,7 +88,7 @@ export default function CraftingSlot({ crafting }) {
 
   function cancellarCrafteo() {
     dispatch(loadingClickedOnSomething());
-    fetch("http://192.168.1.124:9000/api/build/cancelResourceCrafting", {
+    fetch("https://back-renler.onrender.com/api/build/cancelResourceCrafting", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

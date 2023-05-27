@@ -9,6 +9,13 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  cursor: pointer;
+}
+
+.button_habitacion_estilos {
+  cursor: pointer;
+  width: 25px;
+  height: 65px;
 }
 
 #imagen_falta_tiempo {

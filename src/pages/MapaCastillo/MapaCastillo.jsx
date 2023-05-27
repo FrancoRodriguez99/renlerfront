@@ -18,7 +18,7 @@ const MapaCastillo = () => {
 
   useEffect(() => {
     dispatch(loading());
-    fetch("http://192.168.1.124:9000/api/build/getMap", { method: "GET" })
+    fetch("https://back-renler.onrender.com/api/build/getMap", { method: "GET" })
       .then((x) => x.json())
       .then((d) => {
         setData(d);

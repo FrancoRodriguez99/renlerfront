@@ -42,7 +42,7 @@ const Timer = ({ started, takes, id }) => {
 
   function claim() {
     dispatch(loadingClickedOnSomething());
-    fetch("http://192.168.1.124:9000/api/build/claimResourceFinish", {
+    fetch("https://back-renler.onrender.com/api/build/claimResourceFinish", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

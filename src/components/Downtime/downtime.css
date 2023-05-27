@@ -330,6 +330,11 @@
   overflow-y: scroll;
   height: 70vh;
 }
+.x {
+  cursor: pointer;
+  width: 27px;
+  height: 27px;
+}
 
 .lista_bonuses_costado {
   display: flex;

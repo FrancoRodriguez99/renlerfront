@@ -5,7 +5,7 @@ export default function Edificios() {
   const [edificios, setEdificios] = useState([]);
 
   useEffect(() => {
-    fetch(`http://192.168.1.124:9000/api/admin/all`, {
+    fetch(`https://back-renler.onrender.com/api/admin/all`, {
       method: "GET",
     })
       .then((response) => response.json())
